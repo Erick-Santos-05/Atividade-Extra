@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <style>
+        main h1{
+            font-size: 5em;
+            text-shadow: 1px 1px 1px black;
+        }
+        .video2{
+            border-radius: 0px;
+        }
+        .video2>iframe{
+            left: 10%;
+            top: 10%;
+            width: 80%;
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div><img src="imagens/logo-trento.png" alt="Logo Trento" id="imagemLogo"/></div>
+        <div id="head2">
+            <h1>CURTA UMA MÚSICA</h1>
+            <audio controls>
+                <source src="midia/audio-mp3.mp3" type="audio/mpeg"/>
+                <source src="midia/audio-ogg.ogg" type="audio/ogg"/>
+                <source src="midia/audio-wma.wma" type="audio/x-ms-wma"/>
+                <p>Não foi possível carregar o audio.</p>
+            </audio>
+        </div>
+        <nav>
+            <ul>
+                <li class="bot"><a href="index.html" class="linkEspecial" target="_self" rel="prev">HOME</a></li>
+                <li class="bot"><a href="formulario.html" class="linkEspecial" target="_self" rel="prev">FORMULÁRIO</a></li>
+                <ul class="ff">
+                    <li class="bot">GALERIA</li>
+                    <li><a href="galeriaImg.html" class="linkEspecial" target="_self" rel="next">IMAGENS</a></li>
+                    <li><a href="#" class="linkEspecial" target="_self">VIDEO</a></li>
+                </ul>
+                <li><a href="https://www.facebook.com/peccinoficial" target="_blank" rel="external"><img src="imagens/logo-face.png" alt="Ícone Facebook" /></a></li>
+                <li><a href="https://www.instagram.com/peccinoficial/" target="_blank" rel="external"><img src="imagens/logo-insta.png" alt="Ícone Instagram" /></a></li>
+                <li><a href="https://www.youtube.com/@trento.oficial" target="_blank" rel="external"><img src="imagens/logo-youtube.png" alt="ícone Youtube"/></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Curta Nossa Galeria Trento!</h1>
+        <section class="video2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/X4rgcFF2q1s?si=0-7QLdYVe44va2gM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section class="video2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/MNonZaWdqds?si=q0YxTdLgcmAQXGXR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section class="video2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aPQFs4wi-D8?si=49Rkr_YkijU-fKv1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section class="video2">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/de08QN9N8ZA?si=DFaSzDikpZj0TWc3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section class="video2" style="border-radius: 0px 0px 10px 10px;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/JyVASv4QmdQ?si=R_G5t6b9CpquPK5L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
+    <footer>
+        <div id="barra">
+            <img src="imagens/logo-trento.png" alt="Logo Trento"/>
+            <hr/>
+            <p>&copy; 2024 TRENTO. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </footer>
+    <div id="cor" onclick="cor()">Mudar Tom</div>
+    <div id="aumentar" onclick="aumentarFont()">Aumentar Fonte</div>
+    <div id="diminuir" onclick="diminuirFont()">Diminuir Fonte</div>
+
+    <script>
+        let controle = 1
+        function cor(){
+            let root = document.documentElement;
+            if(controle==1){
+                root.style.setProperty('--cor1','#6FF3C0');
+                root.style.setProperty('--cor2', '#38FFC6');
+                root.style.setProperty('--cor3', '#2BD6DE');
+                controle=0
+            }else if(controle==0){
+                root.style.setProperty('--cor1','#900C3F');
+                root.style.setProperty('--cor2', '#C70039');
+                root.style.setProperty('--cor3', '#D42921');
+                controle=1
+            }
+        }
+
+        let font = 1
+
+        function aumentarFont(){
+            font= Math.min(font + 0.01, 1.1);
+            document.body.style.fontSize=`${font}em`
+        }
+
+        function diminuirFont(){
+            font = Math.max(font - 0.01, 0.8);
+            document.body.style.fontSize=`${font}em`
+        }
+    </script>
+</body>
+</html>

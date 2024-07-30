@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <title>Fale Conosco</title>
+    <style>
+        form>* {
+            display: block;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            width: 30%;
+        }
+
+        form>label {
+            margin: 10px 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+        }
+
+        input {
+            padding: 5px;
+            width: 90%;
+            margin: 10px;
+            border: 1px solid #900C3F;
+            border-radius: 10px;
+        }
+
+        #fem,
+        #masc,
+        #outro {
+            padding: 0px;
+            width: 10%;
+            margin: 0px;
+            border: none;
+            border-radius: 0px;
+        }
+
+        .gen {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+        }
+
+        main p {
+            margin: 10px 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            padding: 0px;
+            text-indent: 0px;
+            font-weight: 400;
+        }
+
+        #requisitos>p {
+            font-size: .8em;
+            opacity: .8;
+        }
+
+        select {
+            margin: 10px auto;
+            width: 95%;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid #900C3F;
+        }
+
+        #botao {
+            width: 50%;
+            margin: 10px auto;
+            color: #900C3F;
+            background-color: #fff;
+            border-width: 2px;
+        }
+
+        #botao:hover {
+            transform: scale(1.05);
+            background-color: #900C3F;
+            color: white;
+            transition-duration: .5s;
+        }
+
+        #botao:active {
+            transform: scale(1);
+            background-color: white;
+            color: #900C3F;
+        }
+
+        #feedback {
+            opacity: .5;
+            font-size: 1em;
+            margin: 0px;
+            padding: 0px;
+            text-align: end;
+        }
+
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div><img src="imagens/logo-trento.png" alt="Logo Trento" id="imagemLogo" /></div>
+        <div id="head2">
+            <h1>CURTA UMA MÚSICA</h1>
+            <audio controls>
+                <source src="midia/audio-mp3.mp3" type="audio/mpeg" />
+                <source src="midia/audio-ogg.ogg" type="audio/ogg" />
+                <source src="midia/audio-wma.wma" type="audio/x-ms-wma" />
+                <p>Não foi possível carregar o audio.</p>
+            </audio>
+        </div>
+        <nav>
+            <ul>
+                <li class="bot"><a href="index.html" class="linkEspecial" target="_self" rel="prev">HOME</a></li>
+                <li class="bot"><a href="#" class="linkEspecial" target="_self">FORMULÁRIO</a></li>
+                <ul class="ff">
+                    <li class="bot">GALERIA</li>
+                    <li><a href="galeriaImg.html" class="linkEspecial" target="_self" rel="next">IMAGENS</a></li>
+                    <li><a href="galeriaVideo.html" class="linkEspecial" target="_self" rel="next">VIDEO</a></li>
+                </ul>
+                <li><a href="https://www.facebook.com/peccinoficial" target="_blank" rel="external"><img
+                            src="imagens/logo-face.png" alt="Ícone Facebook" /></a></li>
+                <li><a href="https://www.instagram.com/peccinoficial/" target="_blank" rel="external"><img
+                            src="imagens/logo-insta.png" alt="Ícone Instagram" /></a></li>
+                <li><a href="https://www.youtube.com/@trento.oficial" target="_blank" rel="external"><img
+                            src="imagens/logo-youtube.png" alt="ícone Youtube" /></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Preencha o formulário</h1>
+        <form style="border: 2px solid #900C3F; border-radius: 20px; padding: 10px; margin: 20px;">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" required autocomplete="off">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" required autocomplete="off">
+            <label for="idade">Idade</label>
+            <input type="number" name="idade" id="idade" required autocomplete="off">
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" required autocomplete="off">
+            <div id="requisitos">
+                <p><span id="carMan">&#x274C; </span> Mínimo 1 letra maiúscula</p>
+                <p><span id="carEspecial">&#x274C;</span> Mínimo 1 caracter especial</p>
+                <p><span id="carNum">&#x274C;</span> Mínimo 1 número</p>
+            </div>
+            <label for="confsenha">Confirmar Senha</label>
+            <input type="password" name="confsenha" id="confsenha" required autocomplete="off">
+            <select id="estado">
+                <option value="estado" selected disabled>Selecione seu estado</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="ES">Espirito Santo</option>
+            </select>
+            <select id="cidade" style="display: none;">
+
+            </select>
+            <textarea type="text" name="texto" id="texto" autocomplete="off" maxlength="500"
+                placeholder="Digite seu texto aqui..."></textarea>
+            <p id="feedback">500/500</p>
+            <input type="button" value="ENVIAR" id="botao" onclick="enviar()">
+        </form>
+    </main>
+    <footer>
+        <div id="barra">
+            <img src="imagens/logo-trento.png" alt="Logo Trento" />
+            <hr />
+            <p>&copy; 2024 TRENTO. TODOS OS DIREITOS RESERVADOS.</p>
+        </div>
+    </footer>
+    <div id="cor" onclick="cor()">Mudar Tom</div>
+    <div id="aumentar" onclick="aumentarFont()">Aumentar Fonte</div>
+    <div id="diminuir" onclick="diminuirFont()">Diminuir Fonte</div>
+    
+    <script>
+        var senha = document.getElementById('senha');
+        var carMan = document.getElementById('carMan');
+        var carEsp = document.getElementById('carEspecial');
+        var carNum = document.getElementById('carNum');
+        var letraMaiscula = /[A-Z]/;
+        var caracterEspecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/;
+        var contemNum = /[0-9]/;
+
+        senha.addEventListener('input', function () {
+            if(letraMaiscula.test(senha.value)){
+                carMan.innerHTML= '&#x2714;'
+            }else{
+                carMan.innerHTML= '&#x274C;'
+            }
+
+            if(caracterEspecial.test(senha.value)){
+                carEsp.innerHTML='&#x2714;'
+            }else{
+                carEsp.innerHTML='&#x274C;'
+            }
+            
+            if(contemNum.test(senha.value)){
+                carNum.innerHTML='&#x2714;'
+                return true;
+            }else{
+                carNum.innerHTML='&#x274C;'
+                return false;
+            }
+        });
+        var estado = document.getElementById('estado');
+        estado.addEventListener('change', estadoSel);
+
+        let selecaoCidade = document.getElementById('cidade');
+
+        function estadoSel(evento) {
+            selecaoEstado = evento.target.value
+
+            selecaoCidade.style.display = 'block'
+
+            selecaoCidade.innerHTML = '';
+            let cid0 = document.createElement('option');
+            cid0.text = 'Selecione uma cidade';
+            cid0.selected = true
+            cid0.disabled = true
+            selecaoCidade.appendChild(cid0)
+
+            if (selecaoEstado == 'MG') {
+                let cid1 = document.createElement('option');
+                cid1.text = 'Nova Lima'
+                selecaoCidade.appendChild(cid1)
+
+                let cid2 = document.createElement('option');
+                cid2.text = 'Belo Horizonte'
+                selecaoCidade.appendChild(cid2)
+
+                let cid3 = document.createElement('option');
+                cid3.text = 'Brumadinho'
+                selecaoCidade.appendChild(cid3)
+
+            } else if (selecaoEstado == 'SP') {
+                let cid1 = document.createElement('option');
+                cid1.text = 'São Paulo'
+                selecaoCidade.appendChild(cid1)
+
+                let cid2 = document.createElement('option');
+                cid2.text = 'Sorocaba'
+                selecaoCidade.appendChild(cid2)
+
+                let cid3 = document.createElement('option');
+                cid3.text = 'Santos'
+                selecaoCidade.appendChild(cid3)
+            } else if (selecaoEstado == 'RJ') {
+                let cid1 = document.createElement('option');
+                cid1.text = 'Rio de Janeiro'
+                selecaoCidade.appendChild(cid1)
+
+                let cid2 = document.createElement('option');
+                cid2.text = 'Nitéroi'
+                selecaoCidade.appendChild(cid2)
+
+                let cid3 = document.createElement('option');
+                cid3.text = 'Petrópolis'
+                selecaoCidade.appendChild(cid3)
+            } else if (selecaoEstado == 'ES') {
+                let cid1 = document.createElement('option');
+                cid1.text = 'Guarapari'
+                selecaoCidade.appendChild(cid1)
+
+                let cid2 = document.createElement('option');
+                cid2.text = 'Vitória'
+                selecaoCidade.appendChild(cid2)
+
+                let cid3 = document.createElement('option');
+                cid3.text = 'Alegre'
+                selecaoCidade.appendChild(cid3)
+            }
+        }
+
+        function enviar() {
+            var capNome = document.getElementById('nome');
+            var nome = capNome.value;
+            var capEmail = document.getElementById('email');
+            var email = capEmail.value;
+            var capIdade = document.getElementById('idade');
+            var idade = capIdade.value;
+            parseInt(idade)
+            var capSenha = document.getElementById('senha');
+            var senha = capSenha.value;
+            var capConfsenha = document.getElementById('confsenha');
+            var confsenha = capConfsenha.value;
+
+            if (idade < 18) {
+                alert('Menores de 18 anos não podem enviar o formulário!')
+                return;
+            }
+
+            if(senha !== confsenha){
+                alert('Senhas diferentes.')
+                return;
+            }
+            if(!letraMaiscula.test(senha)){
+                alert('senha inválida.')
+                return;
+            }
+            if(!caracterEspecial.test(senha)){
+                alert('senha inválida.')
+                return;
+            }
+            if(!contemNum.test(senha)){
+                alert('senha inválida.')
+                return;
+            }
+
+        }
+        var texto = document.getElementById('texto');
+        var resul = document.getElementById('feedback');
+
+        texto.addEventListener('input', function () {
+            var quantCaracter = texto.value.length
+
+            resul.innerHTML = `${500 - quantCaracter}/500`
+            if (quantCaracter == 500) {
+                alert('Máximo de caracters atingido.')
+            }
+        });
+
+        let controle = 1
+        function cor(){
+            let root = document.documentElement;
+            if(controle==1){
+                root.style.setProperty('--cor1','#6FF3C0');
+                root.style.setProperty('--cor2', '#38FFC6');
+                root.style.setProperty('--cor3', '#2BD6DE');
+                controle=0
+            }else if(controle==0){
+                root.style.setProperty('--cor1','#900C3F');
+                root.style.setProperty('--cor2', '#C70039');
+                root.style.setProperty('--cor3', '#D42921');
+                controle=1
+            }
+        }
+
+        let font = 1
+
+        function aumentarFont(){
+            font= Math.min(font + 0.01, 1.1);
+            document.body.style.fontSize=`${font}em`
+        }
+
+        function diminuirFont(){
+            font = Math.max(font - 0.01, 0.8);
+            document.body.style.fontSize=`${font}em`
+        }
+    </script>
+</body>
+
+</html>
